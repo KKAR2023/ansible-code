@@ -1,0 +1,47 @@
+2023-05-20 00:00:10,579 p=3109 u=ec2-user n=ansible | PLAY [servers] **************************************************************************************************************
+2023-05-20 00:00:10,592 p=3109 u=ec2-user n=ansible | TASK [Gathering Facts] ******************************************************************************************************
+2023-05-20 00:00:12,687 p=3109 u=ec2-user n=ansible | ok: [44.203.82.161]
+2023-05-20 00:00:12,695 p=3109 u=ec2-user n=ansible | ok: [44.204.8.239]
+2023-05-20 00:00:12,720 p=3109 u=ec2-user n=ansible | TASK [Execute the Uptime command over Command module] ***********************************************************************
+2023-05-20 00:00:13,286 p=3109 u=ec2-user n=ansible | changed: [44.204.8.239]
+2023-05-20 00:00:13,294 p=3109 u=ec2-user n=ansible | changed: [44.203.82.161]
+2023-05-20 00:00:13,323 p=3109 u=ec2-user n=ansible | TASK [Execute the df command] ***********************************************************************************************
+2023-05-20 00:00:13,792 p=3109 u=ec2-user n=ansible | changed: [44.204.8.239]
+2023-05-20 00:00:13,794 p=3109 u=ec2-user n=ansible | changed: [44.203.82.161]
+2023-05-20 00:00:13,806 p=3109 u=ec2-user n=ansible | TASK [debug] ****************************************************************************************************************
+2023-05-20 00:00:13,874 p=3109 u=ec2-user n=ansible | ok: [44.204.8.239] => {
+    "uptimeoutput.stdout_lines": [
+        " 00:00:13 up 36 min,  2 users,  load average: 0.08, 0.02, 0.01"
+    ]
+}
+2023-05-20 00:00:13,896 p=3109 u=ec2-user n=ansible | ok: [44.203.82.161] => {
+    "uptimeoutput.stdout_lines": [
+        " 00:00:13 up 36 min,  2 users,  load average: 0.08, 0.02, 0.01"
+    ]
+}
+2023-05-20 00:00:13,908 p=3109 u=ec2-user n=ansible | TASK [debug] ****************************************************************************************************************
+2023-05-20 00:00:13,973 p=3109 u=ec2-user n=ansible | ok: [44.204.8.239] => {
+    "dfout.stdout_lines": [
+        "Filesystem      Size  Used Avail Use% Mounted on",
+        "devtmpfs        465M     0  465M   0% /dev",
+        "tmpfs           473M     0  473M   0% /dev/shm",
+        "tmpfs           473M  436K  472M   1% /run",
+        "tmpfs           473M     0  473M   0% /sys/fs/cgroup",
+        "/dev/nvme0n1p1  8.0G  1.6G  6.5G  19% /",
+        "tmpfs            95M     0   95M   0% /run/user/1000"
+    ]
+}
+2023-05-20 00:00:13,993 p=3109 u=ec2-user n=ansible | ok: [44.203.82.161] => {
+    "dfout.stdout_lines": [
+        "Filesystem      Size  Used Avail Use% Mounted on",
+        "devtmpfs        964M     0  964M   0% /dev",
+        "tmpfs           972M     0  972M   0% /dev/shm",
+        "tmpfs           972M  436K  971M   1% /run",
+        "tmpfs           972M     0  972M   0% /sys/fs/cgroup",
+        "/dev/nvme0n1p1  8.0G  1.6G  6.5G  19% /",
+        "tmpfs           195M     0  195M   0% /run/user/1000"
+    ]
+}
+2023-05-20 00:00:14,015 p=3109 u=ec2-user n=ansible | PLAY RECAP ******************************************************************************************************************
+2023-05-20 00:00:14,015 p=3109 u=ec2-user n=ansible | 44.203.82.161              : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-05-20 00:00:14,015 p=3109 u=ec2-user n=ansible | 44.204.8.239               : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
